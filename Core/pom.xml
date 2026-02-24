@@ -68,27 +68,32 @@
         </dependency>
 
         <dependency>
-            <groupId>com.magmaguy.freeminecraftmodels</groupId>
-            <artifactId>FreeMinecraftModels</artifactId>
-            <version>1.1.2</version>
-        </dependency>
-
-        <dependency>
             <groupId>io.lumine</groupId>
             <artifactId>Mythic-Dist</artifactId>
             <version>5.0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
-
-        <!-- broken repo, i dont care, will use local jar -->
-        <dependency>
-            <groupId>io.github.arcaneplugins.levelledmobs</groupId>
-            <artifactId>LevelledMobs</artifactId>
-            <version>4.1.1</version>
-        </dependency>
     </dependencies>
 
     <profiles>
+        <profile>
+            <id>optional-integrations</id>
+            <dependencies>
+                <dependency>
+                    <groupId>com.magmaguy.freeminecraftmodels</groupId>
+                    <artifactId>FreeMinecraftModels</artifactId>
+                    <version>1.1.2</version>
+                </dependency>
+
+                <!-- broken repo, i dont care, will use local jar -->
+                <dependency>
+                    <groupId>io.github.arcaneplugins.levelledmobs</groupId>
+                    <artifactId>LevelledMobs</artifactId>
+                    <version>4.1.1</version>
+                </dependency>
+            </dependencies>
+        </profile>
+
         <profile>
             <id>spigot-remapped</id>
             <dependencies>
@@ -118,6 +123,8 @@
             </dependencies>
         </profile>
     </profiles>
+
+    <!-- Optional integrations can be enabled for users with private/local artifact access: mvn clean install -Poptional-integrations -->
 
 
     <build>
