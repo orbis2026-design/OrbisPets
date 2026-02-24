@@ -120,6 +120,7 @@
         <profile>
             <id>spigot-remapped</id>
             <dependencies>
+                <!-- Keep in sync with PetsPlugin#setupNMS(): MC_1_21_4, MC_1_21_5, MC_1_21_8, MC_1_21_10, MC_1_21_11 -->
                 <dependency>
                     <groupId>su.nightexpress.combatpets</groupId>
                     <artifactId>MC_1_21_10</artifactId>
