@@ -12,11 +12,20 @@
         <module>Core</module>
         <module>API</module>
         <module>NMS</module>
-        <module>MC_1_21_4</module>
-        <module>MC_1_21_5</module>
-        <module>MC_1_21_8</module>
-        <module>MC_1_21_10</module>
     </modules>
+
+    <profiles>
+        <!-- NMS bridge modules require local BuildTools-provided remapped Spigot artifacts. -->
+        <profile>
+            <id>spigot-remapped</id>
+            <modules>
+                <module>MC_1_21_4</module>
+                <module>MC_1_21_5</module>
+                <module>MC_1_21_8</module>
+                <module>MC_1_21_10</module>
+            </modules>
+        </profile>
+    </profiles>
 
     <properties>
         <maven.compiler.source>21</maven.compiler.source>
@@ -69,11 +78,6 @@
             <url>https://repo.nightexpressdev.com/releases</url>
         </repository>
 
-        <!-- Required for versioned spigot-api/spigot snapshots used by API/Core/NMS and MC_* modules. -->
-        <repository>
-            <id>spigotmc-snapshots</id>
-            <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
-        </repository>
 
         <repository>
             <id>placeholderapi</id>
