@@ -42,7 +42,11 @@
         <spigot.1_21_5.version>1.21.5-R0.1-SNAPSHOT</spigot.1_21_5.version>
         <spigot.1_21_8.version>1.21.8-R0.1-SNAPSHOT</spigot.1_21_8.version>
         <spigot.1_21_10.version>1.21.10-R0.1-SNAPSHOT</spigot.1_21_10.version>
-        <spigot.1_21_11.version>1.21.11-R0.1-SNAPSHOT</spigot.1_21_11.version>
+        <!--
+          Spigot has not published remapped-mojang artifacts for 1.21.11 yet.
+          Keep the MC_1_21_11 bridge compiling against the latest published mapping set.
+        -->
+        <spigot.1_21_11.version>1.21.10-R0.1-SNAPSHOT</spigot.1_21_11.version>
     </properties>
 
     <distributionManagement>

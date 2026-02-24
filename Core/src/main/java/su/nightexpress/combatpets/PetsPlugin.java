@@ -161,12 +161,14 @@ public class PetsPlugin extends NightPlugin {
     }
 
     private boolean setupNMS() {
-        switch (Version.getCurrent()) {
-            case MC_1_21_4 -> this.petNMS = new MC_1_21_4();
-            case MC_1_21_5 -> this.petNMS = new MC_1_21_5();
-            case MC_1_21_8 -> this.petNMS = new MC_1_21_8();
-            case MC_1_21_10 -> this.petNMS = new MC_1_21_10();
-            case MC_1_21_11 -> this.petNMS = new MC_1_21_11();
+        // Avoid hard-referencing enum constants that may not exist in older NightCore builds.
+        // Using name-based dispatch keeps compilation compatible while still enabling newer bridges.
+        switch (Version.getCurrent().name()) {
+            case "MC_1_21_4" -> this.petNMS = new MC_1_21_4();
+            case "MC_1_21_5" -> this.petNMS = new MC_1_21_5();
+            case "MC_1_21_8" -> this.petNMS = new MC_1_21_8();
+            case "MC_1_21_10" -> this.petNMS = new MC_1_21_10();
+            case "MC_1_21_11" -> this.petNMS = new MC_1_21_11();
         }
         return this.petNMS != null;
     }
