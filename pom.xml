@@ -69,11 +69,6 @@
             <url>https://repo.nightexpressdev.com/releases</url>
         </repository>
 
-        <!-- Required for versioned spigot-api/spigot snapshots used by API/Core/NMS and MC_* modules. -->
-        <repository>
-            <id>spigotmc-snapshots</id>
-            <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
-        </repository>
 
         <repository>
             <id>placeholderapi</id>
