@@ -34,6 +34,12 @@
         <repository>
             <id>lumine-snapshot</id>
             <url>https://mvn.lumine.io/repository/maven-snapshots/</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
         </repository>
 
         <repository>
