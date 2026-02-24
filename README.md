@@ -2,17 +2,19 @@
 
 ## Build profiles
 
-Use these commands in local builds and CI depending on whether NMS bridge classes are required:
+Use these commands in local builds and CI depending on whether NMS bridge classes and private integrations are required:
 
-- **Baseline/public build** (default modules only, no private integrations):
+- **Baseline/public build** (public modules only):
   - `mvn clean install`
-- **Remapped NMS/Core compile path** (includes NMS bridge classes):
+- **Plugin compile with NMS bridges**:
   - `mvn clean install -Pspigot-remapped`
-- **Remapped NMS + private integrations** (for environments with private/local integration artifacts):
+- **Plugin compile + private integrations**:
   - `mvn clean install -Pspigot-remapped,optional-integrations`
+
+> **Important:** `Core` imports NMS bridge classes directly, so `spigot-remapped` is required for a full plugin compile.
 
 ### CI guidance
 
 - Keep public/default CI on `mvn clean install` so baseline modules remain buildable without private integrations.
-- Use `-Pspigot-remapped` in CI jobs that compile Core with remapped NMS bridge dependencies.
+- Use `-Pspigot-remapped` in CI jobs that compile the full plugin, because `Core` has direct imports of remapped NMS bridge classes.
 - Add `optional-integrations` only in private/self-hosted CI environments that have access to those artifacts.
