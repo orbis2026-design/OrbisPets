@@ -92,29 +92,6 @@
                     <version>4.1.1</version>
                 </dependency>
             </dependencies>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.codehaus.mojo</groupId>
-                        <artifactId>build-helper-maven-plugin</artifactId>
-                        <version>3.6.0</version>
-                        <executions>
-                            <execution>
-                                <id>add-optional-integration-sources</id>
-                                <phase>generate-sources</phase>
-                                <goals>
-                                    <goal>add-source</goal>
-                                </goals>
-                                <configuration>
-                                    <sources>
-                                        <source>src/optional-integrations/java</source>
-                                    </sources>
-                                </configuration>
-                            </execution>
-                        </executions>
-                    </plugin>
-                </plugins>
-            </build>
         </profile>
 
         <profile>
@@ -154,10 +131,8 @@
         </profile>
     </profiles>
 
-    <!-- Build commands:
-         baseline/public: mvn clean install
-         remapped NMS compile: mvn clean install -Pspigot-remapped
-         remapped + private integrations: mvn clean install -Pspigot-remapped,optional-integrations -->
+    <!-- Optional integrations can be enabled for users with private/local artifact access: mvn clean install -Poptional-integrations -->
+
 
     <build>
         <resources>
