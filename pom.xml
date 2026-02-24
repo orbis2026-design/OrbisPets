@@ -23,6 +23,7 @@
                 <module>MC_1_21_5</module>
                 <module>MC_1_21_8</module>
                 <module>MC_1_21_10</module>
+                <!-- Keep 1.21.11 bridge enabled so PetsPlugin can dispatch to MC_1_21_11 at runtime. -->
                 <module>MC_1_21_11</module>
             </modules>
         </profile>
