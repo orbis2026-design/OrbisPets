@@ -17,7 +17,7 @@ import su.nightexpress.combatpets.level.LevelingManager;
 import su.nightexpress.combatpets.level.command.LevelingCommands;
 import su.nightexpress.combatpets.nms.PetNMS;
 import su.nightexpress.combatpets.nms.mc_1_21_10.MC_1_21_10;
-import su.nightexpress.combatpets.nms.mc_1_21_3.MC_1_21_4;
+import su.nightexpress.combatpets.nms.mc_1_21_4.MC_1_21_4;
 import su.nightexpress.combatpets.nms.mc_1_21_5.MC_1_21_5;
 import su.nightexpress.combatpets.nms.mc_1_21_8.MC_1_21_8;
 import su.nightexpress.combatpets.pet.PetManager;
