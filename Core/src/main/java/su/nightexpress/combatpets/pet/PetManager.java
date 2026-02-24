@@ -32,7 +32,6 @@ import su.nightexpress.combatpets.data.impl.PetUser;
 import su.nightexpress.combatpets.hook.HookId;
 import su.nightexpress.combatpets.pet.impl.*;
 import su.nightexpress.combatpets.pet.listener.CombatListener;
-import su.nightexpress.combatpets.pet.listener.LevelledMobsListener;
 import su.nightexpress.combatpets.pet.listener.PetGenericListener;
 import su.nightexpress.combatpets.pet.listener.PlayerGenericListener;
 import su.nightexpress.combatpets.pet.menu.*;
@@ -43,6 +42,7 @@ import su.nightexpress.nightcore.config.FileConfig;
 import su.nightexpress.nightcore.core.config.CoreLang;
 import su.nightexpress.nightcore.dialog.Dialog;
 import su.nightexpress.nightcore.integration.currency.EconomyBridge;
+import su.nightexpress.nightcore.manager.AbstractListener;
 import su.nightexpress.nightcore.manager.AbstractManager;
 import su.nightexpress.nightcore.util.FileUtil;
 import su.nightexpress.nightcore.util.ItemUtil;
@@ -91,7 +91,7 @@ public class PetManager extends AbstractManager<PetsPlugin> {
         this.addListener(new CombatListener(this.plugin, this));
         this.addListener(new PlayerGenericListener(this.plugin, this));
         if (Plugins.isInstalled(HookId.LEVELLED_MOBS)) {
-            this.addListener(new LevelledMobsListener(this.plugin));
+            this.registerLevelledMobsListener();
         }
 
         this.addTask(this.plugin.createTask(this::tickPets).setSecondsInterval(1));
@@ -118,6 +118,24 @@ public class PetManager extends AbstractManager<PetsPlugin> {
         this.foodMap.clear();
 
         AttributeRegistry.clear();
+    }
+
+    private void registerLevelledMobsListener() {
+        final String listenerClassName = "su.nightexpress.combatpets.pet.listener.LevelledMobsListener";
+
+        try {
+            Class<?> clazz = Class.forName(listenerClassName);
+            if (!AbstractListener.class.isAssignableFrom(clazz)) {
+                this.plugin.warn("Can not register LevelledMobs listener: incompatible class type.");
+                return;
+            }
+
+            AbstractListener<PetsPlugin> listener = (AbstractListener<PetsPlugin>) clazz.getConstructor(PetsPlugin.class).newInstance(this.plugin);
+            this.addListener(listener);
+        }
+        catch (ReflectiveOperationException exception) {
+            this.plugin.warn("Can not register LevelledMobs listener. Optional integrations are disabled or missing.");
+        }
     }
 
     private void loadTiers() {
