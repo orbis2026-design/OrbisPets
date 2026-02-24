@@ -147,8 +147,10 @@
         </profile>
     </profiles>
 
-    <!-- Optional integrations can be enabled for users with private/local artifact access: mvn clean install -Poptional-integrations -->
-
+    <!-- Build commands:
+         baseline/public: mvn clean install
+         remapped NMS compile: mvn clean install -Pspigot-remapped
+         remapped + private integrations: mvn clean install -Pspigot-remapped,optional-integrations -->
 
     <build>
         <resources>
