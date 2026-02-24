@@ -62,30 +62,6 @@
         </dependency>
 
         <dependency>
-            <groupId>su.nightexpress.combatpets</groupId>
-            <artifactId>MC_1_21_10</artifactId>
-            <version>2.7.2</version>
-        </dependency>
-
-        <dependency>
-            <groupId>su.nightexpress.combatpets</groupId>
-            <artifactId>MC_1_21_8</artifactId>
-            <version>2.7.2</version>
-        </dependency>
-
-        <dependency>
-            <groupId>su.nightexpress.combatpets</groupId>
-            <artifactId>MC_1_21_5</artifactId>
-            <version>2.7.2</version>
-        </dependency>
-
-        <dependency>
-            <groupId>su.nightexpress.combatpets</groupId>
-            <artifactId>MC_1_21_4</artifactId>
-            <version>2.7.2</version>
-        </dependency>
-
-        <dependency>
             <groupId>com.magmaguy.freeminecraftmodels</groupId>
             <artifactId>FreeMinecraftModels</artifactId>
             <version>1.1.2</version>
@@ -105,6 +81,38 @@
             <version>4.1.1</version>
         </dependency>
     </dependencies>
+
+    <profiles>
+        <profile>
+            <id>spigot-remapped</id>
+            <dependencies>
+                <dependency>
+                    <groupId>su.nightexpress.combatpets</groupId>
+                    <artifactId>MC_1_21_10</artifactId>
+                    <version>2.7.2</version>
+                </dependency>
+
+                <dependency>
+                    <groupId>su.nightexpress.combatpets</groupId>
+                    <artifactId>MC_1_21_8</artifactId>
+                    <version>2.7.2</version>
+                </dependency>
+
+                <dependency>
+                    <groupId>su.nightexpress.combatpets</groupId>
+                    <artifactId>MC_1_21_5</artifactId>
+                    <version>2.7.2</version>
+                </dependency>
+
+                <dependency>
+                    <groupId>su.nightexpress.combatpets</groupId>
+                    <artifactId>MC_1_21_4</artifactId>
+                    <version>2.7.2</version>
+                </dependency>
+            </dependencies>
+        </profile>
+    </profiles>
+
 
     <build>
         <resources>
