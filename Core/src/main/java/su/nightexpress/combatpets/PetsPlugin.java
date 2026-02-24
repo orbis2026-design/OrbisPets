@@ -17,7 +17,8 @@ import su.nightexpress.combatpets.level.LevelingManager;
 import su.nightexpress.combatpets.level.command.LevelingCommands;
 import su.nightexpress.combatpets.nms.PetNMS;
 import su.nightexpress.combatpets.nms.mc_1_21_10.MC_1_21_10;
-import su.nightexpress.combatpets.nms.mc_1_21_3.MC_1_21_4;
+import su.nightexpress.combatpets.nms.mc_1_21_11.MC_1_21_11;
+import su.nightexpress.combatpets.nms.mc_1_21_4.MC_1_21_4;
 import su.nightexpress.combatpets.nms.mc_1_21_5.MC_1_21_5;
 import su.nightexpress.combatpets.nms.mc_1_21_8.MC_1_21_8;
 import su.nightexpress.combatpets.pet.PetManager;
@@ -165,6 +166,7 @@ public class PetsPlugin extends NightPlugin {
             case MC_1_21_5 -> this.petNMS = new MC_1_21_5();
             case MC_1_21_8 -> this.petNMS = new MC_1_21_8();
             case MC_1_21_10 -> this.petNMS = new MC_1_21_10();
+            case MC_1_21_11 -> this.petNMS = new MC_1_21_11();
         }
         return this.petNMS != null;
     }

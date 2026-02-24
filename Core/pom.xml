@@ -97,9 +97,16 @@
         <profile>
             <id>spigot-remapped</id>
             <dependencies>
+                <!-- Path B wiring: keep in sync with PetsPlugin#setupNMS() for all 1.21.x bridges, including MC_1_21_11. -->
                 <dependency>
                     <groupId>su.nightexpress.combatpets</groupId>
                     <artifactId>MC_1_21_10</artifactId>
+                    <version>2.7.2</version>
+                </dependency>
+
+                <dependency>
+                    <groupId>su.nightexpress.combatpets</groupId>
+                    <artifactId>MC_1_21_11</artifactId>
                     <version>2.7.2</version>
                 </dependency>
 

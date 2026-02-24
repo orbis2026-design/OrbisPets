@@ -1,4 +1,4 @@
-package su.nightexpress.combatpets.nms.mc_1_21_3;
+package su.nightexpress.combatpets.nms.mc_1_21_4;
 
 import net.minecraft.core.Holder;
 import net.minecraft.core.component.DataComponents;
@@ -33,6 +33,7 @@ import su.nightexpress.combatpets.api.pet.PetEntity;
 import su.nightexpress.combatpets.api.pet.PetEntityBridge;
 import su.nightexpress.combatpets.api.pet.Template;
 import su.nightexpress.combatpets.nms.PetNMS;
+import su.nightexpress.combatpets.nms.mc_1_21_3.EntityInjector;
 import su.nightexpress.combatpets.nms.mc_1_21_3.goals.follow.PetLookAtOwnerGoal;
 import su.nightexpress.nightcore.util.Reflex;
 
