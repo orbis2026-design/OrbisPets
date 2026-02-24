@@ -12,11 +12,20 @@
         <module>Core</module>
         <module>API</module>
         <module>NMS</module>
-        <module>MC_1_21_4</module>
-        <module>MC_1_21_5</module>
-        <module>MC_1_21_8</module>
-        <module>MC_1_21_10</module>
     </modules>
+
+    <profiles>
+        <!-- NMS bridge modules require local BuildTools-provided remapped Spigot artifacts. -->
+        <profile>
+            <id>spigot-remapped</id>
+            <modules>
+                <module>MC_1_21_4</module>
+                <module>MC_1_21_5</module>
+                <module>MC_1_21_8</module>
+                <module>MC_1_21_10</module>
+            </modules>
+        </profile>
+    </profiles>
 
     <properties>
         <maven.compiler.source>21</maven.compiler.source>
