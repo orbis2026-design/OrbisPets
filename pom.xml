@@ -15,7 +15,7 @@
     </modules>
 
     <profiles>
-        <!-- NMS bridge modules require local BuildTools-provided remapped Spigot artifacts. -->
+        <!-- Path B selected: keep all 1.21.x NMS bridge modules wired for runtime dispatch. -->
         <profile>
             <id>spigot-remapped</id>
             <modules>
